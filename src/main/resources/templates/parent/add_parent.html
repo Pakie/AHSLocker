@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Exams</title>
+
+    <!-- Plugins css start-->
+
+    <!-- Plugins css Ends-->
+
+</head>
+<body>
+
+<section layout:fragment="content">
+    <div class="col-sm-12">
+        <!-- HTML (DOM) sourced data  Starts-->
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Add a Parent</h5>
+            </div>
+
+            <p class="text-danger" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+            <form class="form theme-form" action="#" th:action="@{/saveParent}" th:object="${parent}" method="post" enctype="multipart/form-data">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Student</label>
+                                <div class="col-sm-9">
+                                    <select th:field="*{students}" class="custom-select form-select">
+                                        <th:block th:each="student: ${students}">
+                                            <option th:value="${student.studentName}" th:text="${student.studentName}"></option>
+                                        </th:block>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Title</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control digits" th:field="*{parentTitle}" id="example-datetime-local-input" type="datetime-local" value="2018-01-19T18:45:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{parentName}" type="text" placeholder="Parent Name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">ID Number</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{parentIdNumber}" type="text" placeholder="Parent ID Number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{parentEmailAddress}" type="email" placeholder="Parent Email Address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Address</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{parentAddress}" type="text" placeholder="Parent Address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Phone Number</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{parentPhoneNumber}" type="text" placeholder="Parent Phone Number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <input class="btn btn-light" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+        <!-- HTML (DOM) sourced data  Ends-->
+    </div>
+</section>
+
+<!-- Plugins JS start-->
+
+<!-- Plugins JS Ends-->
+
+</body>
+</html>

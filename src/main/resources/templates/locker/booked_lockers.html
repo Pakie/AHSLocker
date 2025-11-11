@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>All Modules</title>
+
+    <!-- Plugins css start-->
+
+    <!-- Plugins css Ends-->
+
+</head>
+<body>
+
+<section layout:fragment="content">
+    <div class="col-sm-12">
+        <!-- HTML (DOM) sourced data  Starts-->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0 card-no-border">
+                    <h3 class="mb-3">All Booked Lockers</h3>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="display" id="data-source-1" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Locker Label</th>
+                                    <th>Grade</th>
+                                    <th>Year</th>
+                                    <th>Parent</th>
+                                    <th>Student</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="bookedLocker:${bookedLockers}">
+                                    <td th:text="${bookedLocker.locker.label}"/>
+                                    <td th:text="${bookedLocker.locker.lockerGrade}"/>
+                                    <td th:text="${bookedLocker.year}"/>
+                                    <!-- <td th:text="'${bookedLocker.parent.parentName} ' + '${bookedLocker.parent.parentSurname}'"/> -->
+                                    <td th:text="${bookedLocker.parent.parentName}"/>
+                                    <td th:text="${bookedLocker.student.studentName}"/>
+                                    <td>Test</td>
+                                    <td>
+                                        <ul class="action">
+                                            <li class="edit"> <a href="#"><i class="icon-pencil-alt"></i></a></li>
+                                            <li class="delete"><a href="#"><i class="icon-trash"></i></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HTML (DOM) sourced data  Ends-->
+        </div>
+    </div>
+</section>
+
+<!-- Plugins JS start-->
+
+<!-- Plugins JS Ends-->
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin_layout}" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <title>Uni-XM | Admin</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <!-- user profile first-style start-->
+    <div class="container-fluid">
+
+        <!-- Admin dashboard start -->
+        <div class="row" sec:authorize="hasRole('ADMIN')">
+            <div class="col-sm-3">
+                <div class="card course-box widget-course">
+                    <div class="card-body">
+                        <div class="course-widget">
+                            <div class="course-icon warning">
+                                <svg class="fill-icon">
+                                    <use href="../assets/svg/icon-sprite.svg#course-2"></use>
+                                </svg>
+                            </div>
+                            <!--<div>
+                                <h4 th:text="${modules.size()}" class="mb-0" /><span class="f-light">Registered modules</span><a class="btn btn-light f-light" th:href="@{/students/user/modules}">View modules<span class="ms-2">
+                                <svg class="fill-icon f-light">
+                                  <use href="../assets/svg/icon-sprite.svg#arrowright"></use>
+                                </svg></span></a>
+                            </div>-->
+                        </div>
+                    </div>
+                    <ul class="square-group">
+                        <li class="square-1 warning"></li>
+                        <li class="square-1 primary"></li>
+                        <li class="square-2 warning1"></li>
+                        <li class="square-3 danger"></li>
+                        <li class="square-4 light"></li>
+                        <li class="square-5 warning"></li>
+                        <li class="square-6 success"></li>
+                        <li class="square-7 success"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card course-box widget-course">
+                    <div class="card-body">
+                        <div class="course-widget">
+                            <div class="course-icon warning">
+                                <svg class="fill-icon">
+                                    <use href="../assets/svg/icon-sprite.svg#course-2"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">50+</h4><span class="f-light">Booked Lockers</span><a class="btn btn-light f-light" href="learning-list-view.html">View booked lockers<span class="ms-2">
+                                <svg class="fill-icon f-light">
+                                  <use href="../assets/svg/icon-sprite.svg#arrowright"></use>
+                                </svg></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="square-group">
+                        <li class="square-1 warning"></li>
+                        <li class="square-1 primary"></li>
+                        <li class="square-2 warning1"></li>
+                        <li class="square-3 danger"></li>
+                        <li class="square-4 light"></li>
+                        <li class="square-5 warning"></li>
+                        <li class="square-6 success"></li>
+                        <li class="square-7 success"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card course-box widget-course">
+                    <div class="card-body">
+                        <div class="course-widget">
+                            <div class="course-icon warning">
+                                <svg class="fill-icon">
+                                    <use href="../assets/svg/icon-sprite.svg#course-2"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">50+</h4><span class="f-light">Available Lockers</span><a class="btn btn-light f-light" href="learning-list-view.html">View available lockers<span class="ms-2">
+                                <svg class="fill-icon f-light">
+                                  <use href="../assets/svg/icon-sprite.svg#arrowright"></use>
+                                </svg></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="square-group">
+                        <li class="square-1 warning"></li>
+                        <li class="square-1 primary"></li>
+                        <li class="square-2 warning1"></li>
+                        <li class="square-3 danger"></li>
+                        <li class="square-4 light"></li>
+                        <li class="square-5 warning"></li>
+                        <li class="square-6 success"></li>
+                        <li class="square-7 success"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card course-box widget-course">
+                    <div class="card-body">
+                        <div class="course-widget">
+                            <div class="course-icon warning">
+                                <svg class="fill-icon">
+                                    <use href="../assets/svg/icon-sprite.svg#course-2"></use>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">50+</h4><span class="f-light">Total Lockers</span><a class="btn btn-light f-light" href="learning-list-view.html">View all lockers<span class="ms-2">
+                                <svg class="fill-icon f-light">
+                                  <use href="../assets/svg/icon-sprite.svg#arrowright"></use>
+                                </svg></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="square-group">
+                        <li class="square-1 warning"></li>
+                        <li class="square-1 primary"></li>
+                        <li class="square-2 warning1"></li>
+                        <li class="square-3 danger"></li>
+                        <li class="square-4 light"></li>
+                        <li class="square-5 warning"></li>
+                        <li class="square-6 success"></li>
+                        <li class="square-7 success"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xxl-3 col-sm-6">
+            <div class="card height-equal radial-height">
+                <div class="card-body radial-progress-card">
+                    <div>
+                        <h6 class="mb-0">Average Locker Availability</h6>
+                        <div class="sale-details">
+                            <h5 class="font-primary mb-0">45,908</h5><span class="f-12 f-light f-w-500"><i data-feather="arrow-up"></i>+5.7%</span>
+                        </div>
+                        <p class="f-light"> The point of using Lorem Ipsum</p>
+                    </div>
+                    <div class="radial-chart-wrap">
+                        <div id="radial-chart"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xxl-3 col-md-6 box-col-6">
+            <div class="card">
+                <div class="card-header card-no-border">
+                    <h5>Locker Statistics</h5><span class="f-light f-w-500 f-14">(Total profit growth of 30%)</span>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="monthly-profit">
+                        <div id="profitmonthly"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Admin dashboard end -->
+
+    </div>
+    <!-- user profile first-style end-->
+</section>
+</body>
+
+<script src="../assets/js/dashboard/dashboard_2.js" th:src="@{/assets/js/dashboard/dashboard_2.js}"></script>
+<!-- script src="/js/admin_dashboard_availability.js" defer></script> -->
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin_layout}" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>All Exams</title>
+
+    <!-- Plugins css start-->
+
+    <!-- Plugins css Ends-->
+
+</head>
+<body>
+
+<section layout:fragment="content">
+    <div class="col-sm-12">
+        <!-- HTML (DOM) sourced data  Starts-->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header pb-0 card-no-border">
+                    <h3 class="mb-3">All Exams</h3>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="display" id="data-source-1" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Parent Title</th>
+                                    <th>Parent Name</th>
+                                    <th>Parent ID Number</th>
+                                    <th>Parent Email</th>
+                                    <th>Parent Address</th>
+                                    <th>Parent Phone Number</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="parent:${parents}">
+                                    <td th:text="${parent.parentTitle}"></td>
+                                    <td th:text="${parent.parentName}"></td>
+                                    <td th:text="${parent.parentIdNumber}"></td>
+                                    <td th:text="${parent.parentEmailAddress}"></td>
+                                    <td th:text="${parent.parentAddress}"></td>
+                                    <td th:text="${parent.parentPhoneNumber}"></td>
+                                    <td>
+                                        <ul class="action">
+                                            <li class="edit"> <a href="#"><i class="icon-pencil-alt"></i></a></li>
+                                            <li class="delete"><a href="#"><i class="icon-trash"></i></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HTML (DOM) sourced data  Ends-->
+        </div>
+    </div>
+</section>
+
+<!-- Plugins JS start-->
+
+<!-- Plugins JS Ends-->
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Students</title>
+
+    <!-- Plugins css start-->
+
+    <!-- Plugins css Ends-->
+
+</head>
+<body>
+
+<section layout:fragment="content">
+    <div class="col-sm-12">
+        <!-- HTML (DOM) sourced data  Starts-->
+        <div class="col-sm-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Update Student</h5>
+                </div>
+                <form class="form theme-form">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label" for="exampleFormControlInput1">Student Number</label>
+                                    <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="Student Number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label" for="exampleInputPassword2">Password</label>
+                                    <input class="form-control" id="exampleInputPassword2" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <input class="btn btn-light" type="reset" value="Cancel">
+                    </div>
+                </form>
+            </div>
+
+        <!-- HTML (DOM) sourced data  Ends-->
+        </div>
+    </div>
+</section>
+
+<!-- Plugins JS start-->
+
+<!-- Plugins JS Ends-->
+
+</body>
+</html>
