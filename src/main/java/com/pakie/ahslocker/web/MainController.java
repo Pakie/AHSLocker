@@ -10,14 +10,19 @@ public class MainController {
         return "login";
     }
 
-    @GetMapping("/")
+/*    @GetMapping("/")
     public String home() {
         return "index";
-    }
+    }*/
 
     @GetMapping("/logout")
     public String logout(){
         return "login";
+    }
+
+    @GetMapping("/register")
+    public  String register(){
+        return "registration";
     }
 
 }

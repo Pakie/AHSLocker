@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
+@EnableMethodSecurity(prePostEnabled = true, jsr250Enabled = true)
 public class SecurityConfiguration {
 
     @Autowired
@@ -41,6 +41,10 @@ public class SecurityConfiguration {
                 "/resources/**",
                 "/static/**",
                 "/assets/**",
+                "/css/**",
+                "/js/**",
+                "/images/**",
+                "/register/**"
         };
 
         http

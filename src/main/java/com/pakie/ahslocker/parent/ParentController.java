@@ -1,5 +1,6 @@
 package com.pakie.ahslocker.parent;
 
+import com.pakie.ahslocker.student.Student;
 import com.pakie.ahslocker.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,7 +39,9 @@ public class ParentController {
     @GetMapping("/parents/add-parent")
     public String addParent(Model model){
         Parent parent = new Parent();
+        Student student = new Student();
         model.addAttribute("parent", parent);
+        model.addAttribute("students", student);
         return "/parent/add_parent";
     }
 

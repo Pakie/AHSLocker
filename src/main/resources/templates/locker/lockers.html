@@ -37,8 +37,8 @@
                                     <td th:text="${locker.isAvailable} ? 'Available' : 'Booked'"/>
                                     <td>
                                         <ul class="action">
-                                            <li class="edit"> <a href="#"><i class="icon-pencil-alt"></i></a></li>
-                                            <li class="delete"><a href="#"><i class="icon-trash"></i></a></li>
+                                            <li class="edit"> <a th:href="@{/lockers/update-locker/{id}(id=${locker.id})}"><i class="icon-pencil-alt"></i></a></li>
+                                            <li class="delete"><a th:href="@{/lockers/delete-locker/{id}(id=${locker.id})}"><i class="icon-trash"></i></a></li>
                                         </ul>
                                     </td>
                                 </tr>

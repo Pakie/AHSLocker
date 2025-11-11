@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin_layout}" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add a Locker</title>
+
+    <!-- Plugins css start-->
+
+    <!-- Plugins css Ends-->
+
 </head>
 <body>
-    Coming Soon!
+
+<section layout:fragment="content">
+    <div class="col-sm-12" sec:authorize="hasRole('ADMIN')">
+        <!-- HTML (DOM) sourced data  Starts-->
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Update a Locker</h5>
+            </div>
+
+            <p class="text-danger" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+            <form class="form theme-form" action="#" th:action="@{/saveLocker}" th:object="${locker}" method="post" enctype="multipart/form-data">
+                <input hidden th:field="*{id}" th:value="${locker.id}">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Label</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{label}" type="text" placeholder="Locker Label">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Locker Grade</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{lockerGrade}" type="text" placeholder="Locker School Grade">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <input class="btn btn-light" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+        <!-- HTML (DOM) sourced data  Ends-->
+    </div>
+</section>
+
+<!-- Plugins JS start-->
+
+<!-- Plugins JS Ends-->
+
 </body>
 </html>

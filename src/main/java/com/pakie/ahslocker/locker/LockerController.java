@@ -61,7 +61,8 @@ public class LockerController {
                                 Model model) {
         List<Locker> lockers = lockerService.getLockerByGradeAndIsAvailable(locker, isAvailable);
         model.addAttribute("lockers", lockers);
-        return "/locker/lockers";
+        //return "/locker/lockers";
+        return "/sysadmin/admin_dashboard";
     }
 }
 

@@ -96,7 +96,7 @@
                                     <div sec:authentication="name"></div>
                                 </span>
 
-                                <p class="mb-0 font-roboto" sec:authorize="hasRole('PARENT')">Lecturer <i class="middle fa fa-angle-down"></i></p>
+                                <p class="mb-0 font-roboto" sec:authorize="hasRole('PARENT')">Parent <i class="middle fa fa-angle-down"></i></p>
                             </div>
                         </div>
                         <ul sec:authorize="isAuthenticated()" class="profile-dropdown onhover-show-div">
@@ -156,8 +156,7 @@
                                         <a class="submenu-title" th:href="@{/}">All My Students<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                     <li>
-                                        <a class="submenu-title" href="#">Register a Student<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
-
+                                        <a class="submenu-title" th:href="@{/students/add-student}">Register a Student<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                 </ul>
                             </li>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Student</title>
+
+    <!-- Plugins css start-->
+
+    <!-- Plugins css Ends-->
+
+</head>
+<body>
+
+<section layout:fragment="content">
+    <div class="col-sm-12">
+        <!-- HTML (DOM) sourced data  Starts-->
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Add a Student</h5>
+            </div>
+
+            <p class="text-danger" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+            <form class="form theme-form" action="#" th:action="@{/saveStudent}" th:object="${student}" method="post" enctype="multipart/form-data">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Student Number</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{studentNumber}" type="text" placeholder="Student Number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Student Name</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{studentName}" type="text" placeholder="Student Name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Student Surname</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{studentSurname}" type="text" placeholder="Parent Surname">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Student Grade</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" th:field="*{grade}" type="text" placeholder="Student Grade">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <input class="btn btn-light" type="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+        <!-- HTML (DOM) sourced data  Ends-->
+    </div>
+</section>
+
+<!-- Plugins JS start-->
+
+<!-- Plugins JS Ends-->
+
+</body>
+</html>

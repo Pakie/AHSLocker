@@ -178,8 +178,7 @@
                                         <a class="submenu-title" th:href="@{/students/all}">All Students<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                     <li>
-                                        <a class="submenu-title" href="#">Add Student<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
-
+                                        <a class="submenu-title" th:href="@{/students/add-student}">Add Student<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                 </ul>
                             </li>
@@ -196,7 +195,7 @@
                                         <a class="submenu-title" th:href="@{/lockers}">All Lockers<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                     <li sec:authorize="hasRole('ADMIN')">
-                                        <a class="submenu-title" href="#">Booked Lockers<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
+                                        <a class="submenu-title" th:href="@{/locker-bookings/booked-lockers}">Booked Lockers<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                     <li sec:authorize="hasRole('ADMIN')">
                                         <a th:href="@{/lockers/add-locker}"><span>Add A New Locker</span></a>
@@ -223,6 +222,9 @@
                                     </li>
                                     <li sec:authorize="hasRole('ADMIN')">
                                         <a class="submenu-title" href="#">My Written Exams<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
+                                    </li>
+                                    <li sec:authorize="hasRole('ADMIN')">
+                                        <a class="submenu-title" th:href="@{/parents/add-parent}">Add a parent<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
                                     </li>
                                 </ul>
                             </li>
